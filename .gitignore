@@ -1,0 +1,5 @@
+# secrets
+.env
+
+# artifact from mac
+.DS_Store
