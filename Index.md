@@ -1,6 +1,6 @@
 # LAB - Uppgifter
 
-## Kravspecifikationer
+## 1. Kravspecifikationer
 
 - Studenter (förnamn, efternamn, personnummer, email)
 - Utbildare (fast anställda och konsulter)
@@ -17,7 +17,7 @@
 - Känsliga uppgifter / Personuppgifter är inte synligt för alla i organisationen
 - Övriga anställda - här ingår övriga roller på YrkesCo - (Admin, VD, utbildningschef, teamleader, ekonomiansvarig, ledningsgrupper, kommunikationsansvariga)
 
-## Relationship Statements
+## 2. Relationship Statements
 
 ### Student
 
@@ -69,3 +69,27 @@ Ett program har många studenter
 ### Övriga anställda
 
 En anställd är kopplad till en och endast en anläggning
+
+## 3. Conceptual Data Model (CDM)
+
+<img src = "Data_Models/conceptual_model_2.png">
+
+### Förtydligande:
+
+- En klass tillhör ett program
+- En student tillhör en klass
+- En student tillhör en kurs
+- En utbildningsledare ansvarar för program
+- En utbildningsledare är kopplad till en anläggning
+- En kurs ingår i ett program
+- En kurs undervisas av en utbildare
+- En utbildare kan vara konsult
+- En utbuldare är kopplad till en anläggning
+- Övriga anställda är kopplad till en anläggning
+- En student är kopplad till en anläggning
+
+## 4. Logical Data Model (LDM)
+
+### Entitys och Attribut
+
+## 5. ER‑diagram (grafiskt)
