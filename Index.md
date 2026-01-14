@@ -1,5 +1,7 @@
 # LAB - YrkesCo
 
+# DATAMODELLERING
+
 ## 1. Kravspecifikationer
 
 - Studenter (förnamn, efternamn, personnummer, email)
@@ -75,7 +77,7 @@
 
 <img src = "Data_Models/conceptual_model_3.png">
 
-### Specificering:
+### 3.1 Specificering av relationships:
 
 - En klass _tillhör_ program
 - En student _tillhör_ klass
@@ -91,13 +93,16 @@
 
 ## 4. Logical Data Model (LDM)
 
-###
-
+<img src = "Data_Models/conceptual_model_3.png">
 ## 5. ER‑diagram (grafiskt)
 
-## Förbättringar
+## 6. 3NF
+
+## 7. Förbättringar
 
 Utifrån kravspecifikationerna hade förbättringar kunnat adderas vid tillfälle. Exempel på förbättringsområden:
 
 - Studenters **behörighet**
 - **Övriga anställda** - utveckla personlig information, deras avdelningar och organisations-kopplingar till YrkesCo.
+
+# IMPLEMENTATION

@@ -1,6 +1,6 @@
 # Datamodellering – YrkesCo (PostgreSQL + Docker)
 
-Repository för kursen Datamodellering: innehåller datamodellering, databasdesign och implementation i PostgreSQL.
+Repository för kursen Datamodellering: innehåller datamodellering, databasdesign och implementation i PostgreSQL samt en presentation av projektet.
 
 ## Projektbeskrivning
 
@@ -30,10 +30,10 @@ I index.md finns hela uppgiften - krav, modeller, diagram, affärsregler.
 
 ## Användning
 
-## Contributing
+## Medverka i projektet
 
 Pull requests är välkomna.
-Om du vill föreslå ändringar, öppna gärna ett issue först och beskriv vad du vill förbättra.
+Om du vill föreslå ändringar, öppna gärna ett issue först och beskriv vad du vill förbättra. Notera att förbättrings-möjligheter finns i index.md-filen.
 
 ## Tekniker och verktyg
 
