@@ -1,5 +1,25 @@
-# secrets
-.env
-
-# artifact from mac
+# MacOS system files
 .DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Docker
+docker-compose.override.*
+*.env
+docker-compose.override.env
+
+# PostgreSQL data
+pgdata/
+*.sqlc
+*.dump
+*.backup
+
+# IDE / editor
+.vscode/
+*.code-workspace
+
+# Optional: auto-generated SQL/MD
+*_generated.sql
+*_generated.md

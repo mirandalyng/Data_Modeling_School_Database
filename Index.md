@@ -77,7 +77,7 @@
 
 <img src = "Data_Models/conceptual_model_3.png">
 
-### 3.1 Specificering av relationships:
+### 3.1 Specificering av relations-etiketter
 
 - En klass _tillhör_ program
 - En student _tillhör_ klass
@@ -93,8 +93,9 @@
 
 ## 4. Logical Data Model (LDM)
 
-<img src = "Data_Models/conceptual_model_3.png">
-## 5. ER‑diagram (grafiskt)
+<img src = "Data_Models/logic_model_2.png">
+
+## 5. Physical Model - ER‑diagram (grafiskt)
 
 ## 6. 3NF
 
