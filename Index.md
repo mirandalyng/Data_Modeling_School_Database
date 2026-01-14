@@ -1,4 +1,4 @@
-# LAB - Uppgifter
+# LAB - YrkesCo
 
 ## 1. Kravspecifikationer
 
@@ -21,75 +21,83 @@
 
 ### Student
 
-En student är kopplad till en och endast en anläggning
-En student kan delta i en eller många kurser
-En student tillhör en och endast en klass
-En klass har många studenter
+- En student är kopplad till en och endast en anläggning
+- En student kan delta i en eller många kurser
+- En student tillhör en och endast en klass
+- En klass har många studenter
 
 ### Klass
 
-En klass tillhör ett och endast ett program
-Ett program har en eller många klasser
-En klass har många studenter
+- En klass tillhör ett och endast ett program
+- Ett program har en eller många klasser
+- En klass har många studenter
 
 ### Utbildare
 
-En utbildare har en eller många kurser
-En utbildare kan vara undervisa på en eller många anläggningar
+- En utbildare har en eller många kurser
+- En utbildare kan vara undervisa på en eller många anläggningar
 
 ### Konsult
 
-En utbildare kan vara en eller många konsulter
-En konsult kan vara en och endast en utbildare
+- En utbildare kan vara en eller många konsulter
+- En konsult kan vara en och endast en utbildare
 
 ### Utbildningsledare
 
-En utbildningsledare ansvarar för många program (2 olika program)
-Ett program har en och endast en utbildningsledare
+- En utbildningsledare ansvarar för många program (2 olika program)
+- Ett program har en och endast en utbildningsledare
+- En utbildningsledare tillhör en och endast en anläggning
 
 ### Anläggning
 
-En anläggning har många studenter
-En anläggning har många utbildare
-En anläggning har många utbildningsledare
-En anläggning har många övriga anställda
+- En anläggning har många studenter
+- En anläggning har många utbildare
+- En anläggning har många utbildningsledare
+- En anläggning har många övriga anställda
 
 ### Kurs
 
-Ett program kan ha många kurser
-En kurs undervisas av en eller många utbildare
-En kurs har många studenter
+- Ett program kan ha många kurser
+- En kurs undervisas av en eller många utbildare
+- En kurs har många studenter
 
 ### Program
 
-Ett program har en eller många klasser (3 startår/klasser)
-Ett program består av många kurser
-Ett program har många studenter
+- Ett program har en eller många klasser (3 startår/klasser)
+- Ett program består av många kurser
+- Ett program har många studenter
 
 ### Övriga anställda
 
-En anställd är kopplad till en och endast en anläggning
+- En anställd är kopplad till en och endast en anläggning
 
 ## 3. Conceptual Data Model (CDM)
 
-<img src = "Data_Models/conceptual_model_2.png">
+<img src = "Data_Models/conceptual_model_3.png">
 
-### Förtydligande:
+### Specificering:
 
-- En klass tillhör ett program
-- En student tillhör en klass
-- En student tillhör en kurs
-- En utbildningsledare ansvarar för program
-- En utbildningsledare är kopplad till en anläggning
-- En kurs ingår i ett program
-- En kurs undervisas av en utbildare
-- En utbildare kan vara konsult
-- En utbuldare är kopplad till en anläggning
-- Övriga anställda är kopplad till en anläggning
-- En student är kopplad till en anläggning
+- En klass _tillhör_ program
+- En student _tillhör_ klass
+- En student _tillhör_ kurs
+- En utbildningsledare _ansvarar_ för program
+- En utbildningsledare är _kopplad till_ anläggningingar
+- En kurs _ingår_ i ett program
+- En kurs _undervisas_ av utbildare
+- En utbildare _kan vara_ konsult
+- En utbildare är _kopplad till_ anläggningingar
+- Övriga anställda är _kopplad till_ anläggningar
+- En student är kopplad till anläggningar
 
 ## 4. Logical Data Model (LDM)
 
-### Entitys och Attribut
+###
 
 ## 5. ER‑diagram (grafiskt)
+
+## Förbättringar
+
+Utifrån kravspecifikationerna hade förbättringar kunnat adderas vid tillfälle. Exempel på förbättringsområden:
+
+- Studenters **behörighet**
+- **Övriga anställda** - utveckla personlig information, deras avdelningar och organisations-kopplingar till YrkesCo.
