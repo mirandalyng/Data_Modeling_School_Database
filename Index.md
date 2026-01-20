@@ -97,6 +97,10 @@
 
 ## 5. Physical Model - ER‑diagram (grafiskt)
 
+- The dbml code can be found in - physical_model.dbml
+
+<img src = "Data_Models/physical_model_1.png">
+
 ## 6. 3NF
 
 ## 7. Förbättringar

@@ -1,0 +1,111 @@
+Table Person {
+  person_id INT [pk]
+  fornamn VARCHAR(20) [not null]
+  efternamn VARCHAR(50) [not null]
+  person_nr CHAR(12) [not null, unique, note: "must be 12 digits"] //ett person_nr måste vara exakt 12 siffor
+  email VARCHAR(50) [not null]
+  phone_nr VARCHAR(20) [not null]
+}
+
+Table Klass {
+  klass_id INT [pk]
+  start_ar DATE
+  program_id INT [not null, ref: < Program.program_id]
+}
+
+Table Student {
+  student_id INT [pk]
+  person_id INT [not null, ref: < Person.person_id]
+  klass_id INT [ref: < Klass.klass_id]
+  anlaggning_id INT [not null, ref: < Anlaggning.anlaggning_id]
+}
+
+Table Student_kurs {
+  student_id INT [pk,not null, ref: < Student.student_id]
+  kurs_id INT [pk, not null, ref: < Kurs.kurs_id]
+}
+
+Table Student_frist_kurs {
+  student_id INT [pk, not null, ref: < Student.student_id]
+  kurs_id INT [pk, not null, ref: < Fristaende_kurs.frist_kurs_id]
+}
+
+Table Kurs {
+  kurs_id INT [pk]
+  kursnamn VARCHAR(20) [not null]
+  kurskod VARCHAR(10) [not null]
+  kurspoang DECIMAL(3.1) [not null]
+  beskrivning VARCHAR(150) [not null]
+}
+
+Table Fristaende_kurs{
+  frist_kurs_id INT [pk]
+  kursnamn VARCHAR(20) [not null]
+  kurskod VARCHAR(10) [not null]
+  kurspoang DECIMAL(3.1) [not null]
+  beskrivning VARCHAR(150) [not null]
+}
+
+Table Program {
+  program_id INT [pk]
+  program_namn VARCHAR(50) [not null]
+  utbildningsledare_id INT [not null, ref: < Utbildningsledare.utbildningsledare_id]
+}
+
+Table Program_kurs {
+  program_id INT [pk,not null, ref: < Program.program_id]
+  kurs_id INT [pk, not null, ref: < Kurs.kurs_id]
+}
+
+Table Anlaggning {
+  anlaggning_id INT [pk]
+  namn VARCHAR(40) [not null]
+  stad VARCHAR(40) [not null]
+}
+
+Table Utbildningsledare {
+  utbildningsledare_id INT [pk]
+  person_id INT [not null, ref: < Person.person_id]
+  anlaggning_id INT [not null, ref: < Anlaggning.anlaggning_id]
+}
+
+Table Ovriga_anstallda {
+  anstallning_id INT [pk]
+  person_id INT [not null, ref: < Person.person_id]
+  roll VARCHAR(40) [not null]
+  anlaggning_id INT [not null, ref: < Anlaggning.anlaggning_id]
+}
+
+Table Utbildare{
+  utbildare_id INT [pk]
+  person_id INT [not null, ref: < Person.person_id]
+}
+
+Table Konsult {
+  utbildare_id INT [pk, ref: < Utbildare.utbildare_id]
+  foretag VARCHAR(50) [not null]
+  foretagsinfo VARCHAR(100)
+  organisationsnummer CHAR(10) [not null]
+  f_skatt BOOLEAN [not null]
+  adress VARCHAR(100)
+  arvode_per_timma DECIMAL(6,2) [not null]
+}
+
+
+Table Utbildare_kurs {
+  utbildare_id INT [pk, not null, ref: < Utbildare.utbildare_id]
+  kurs_id INT [pk, not null, ref: < Kurs.kurs_id]
+}
+
+Table Utbildare_frist_kurs {
+  utbildare_id INT [pk, not null, ref: < Utbildare.utbildare_id]
+  frist_kurs_id INT [pk, not null, ref: < Fristaende_kurs.frist_kurs_id]
+}
+
+Table Utbildare_anlaggning {
+  utbildare_id INT [pk, not null, ref: < Utbildare.utbildare_id]
+  anlaggning_id INT [pk, not null, ref: < Anlaggning.anlaggning_id]
+}
+
+
+
