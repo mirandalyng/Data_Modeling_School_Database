@@ -47,3 +47,4 @@ Om du vill föreslå ändringar, öppna gärna ett issue först och beskriv vad 
 ## Källor
 
 - https://dev.to/camptocamp-geo/understanding-the-generated-always-column-option-in-postgresql-oo4
+- https://www.geeksforgeeks.org/postgresql/postgresql-create-function-statement/

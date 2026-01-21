@@ -12,7 +12,7 @@ CREATE TABLE Person (
 
 -- Table Anlaggning
 CREATE TABLE Anlaggning (
-    anlaggning_id SERIAL PRIMARY KEY,
+    anlaggning_id INT PRIMARY KEY CHECK (anlaggning_id IN (1, 2)),
     namn VARCHAR(40) NOT NULL,
     stad VARCHAR(40) NOT NULL CHECK (stad IN ('Stockholm', 'Göteborg')) --finns endast anläggningarna göteborg eller stockholm 
 );
