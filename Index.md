@@ -5,12 +5,12 @@
 ## 1. Kravspecifikationer
 
 - Studenter (förnamn, efternamn, personnummer, email)
-- Utbildare (fast anställda och konsulter)
+- En utbildare kan vara fast anställd eller konsult
+- En konsult är kopplad till exakt en utbildare
 - Utbildningsledare (personuppgifter)
-- En utbildningsledare måste ha hand om ett program
+- En utbildningsledare har hand om 3 klasser och 2 program
 - En student måste ingå i en kurs eller ett program
 - En utbildare kan ha en eller flera kurser
-- En utbildningsledare har hand om 2 program
 - Kurser - (namn, kurskod, kurspoäng, kort beskrivning)
 - En kurs kan vara fristående eller ingå i ett program
 - Ett program har 3 olika startår / klasser
@@ -26,6 +26,7 @@
 - En student är kopplad till en och endast en anläggning
 - En student kan delta i en eller många kurser
 - En student tillhör en och endast en klass
+- Studenter ingår i program via klass och kan även delta i en eller flera kurser.
 - En klass har många studenter
 
 ### Klass
@@ -56,6 +57,7 @@
 - En anläggning har många utbildare
 - En anläggning har många utbildningsledare
 - En anläggning har många övriga anställda
+- Anläggning identifieras via AnläggningID och innehåller beskrivande attribut såsom namn och stad (Göteborg, Stockholm).
 
 ### Kurs
 
@@ -93,7 +95,7 @@
 
 ## 4. Logical Data Model (LDM)
 
-<img src = "Data_Models/logic_model_2.png">
+<img src = "Data_Models/logical_model_3.png">
 
 ## 5. Physical Model - ER‑diagram (grafiskt)
 
@@ -103,11 +105,26 @@
 
 ## 6. 3NF
 
+- Tabellerna innehåller endast atomära värden (ett värde per rad)
+- Primary Keys existerar
+- Attributen är kopplade och funktionellet beroende av PK
+- Attributen innehåller endast ett värde ,inte flera
+- Beskrivande information är uppdelad i olika tableller
+
+### Källor:
+
+https://db.progdocs.se/normalisering
+https://www.databasteknik.se/webbkursen/normalisering/index.html
+https://mi.sh.se/labwiki2/index.php/Normalformer_och_normalisering
+
 ## 7. Förbättringar
 
 Utifrån kravspecifikationerna hade förbättringar kunnat adderas vid tillfälle. Exempel på förbättringsområden:
 
-- Studenters **behörighet**
 - **Övriga anställda** - utveckla personlig information, deras avdelningar och organisations-kopplingar till YrkesCo.
+
+- **Utbildare** - Om utbildare som är fastanställda skulle behöva ytterligare information som lön eller dylikt hade ett till Table kopplat till Utbildare behövas (fast_anställd)
+
+- **Klass** Fristående kurs är i dagsläget inte kopplad till en klass, något som kan implementeras, men som inte är nödvändig i denna version.
 
 # IMPLEMENTATION

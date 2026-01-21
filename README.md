@@ -43,3 +43,7 @@ Om du vill föreslå ändringar, öppna gärna ett issue först och beskriv vad 
 - Databasteori
 - Normalisering
 - Diagramverktyg (Lucidchart, dbdiagram)
+
+## Källor
+
+- https://dev.to/camptocamp-geo/understanding-the-generated-always-column-option-in-postgresql-oo4

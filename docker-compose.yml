@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_school
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports: # port mapping between host machine and container
+      - "${POSTGRES_PORT}:5432"
+    volumes: # distinguish between named volumes and bind mounts
+      - postgres_data:/var/lib/postgresql #path named by the program (named volume for persisting data)
+      - ./sql:/docker-entrypoint-initdb.d
+    #bind mount for persisting data
+    healthcheck: # define a check after the container is up running
+      #one test all togheter
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres}"]
+      interval: 5s
+      retries: 5
+      timeout: 3s
+#named volume (which can be seen under the Volume section of the GUI)
+volumes: #here is where named volume is created
+  postgres_data:
+#ladda ner 18 postgresql?
