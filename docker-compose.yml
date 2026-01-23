@@ -11,7 +11,7 @@ services:
       - "${POSTGRES_PORT}:5432"
     volumes: # distinguish between named volumes and bind mounts
       - postgres_data:/var/lib/postgresql #path named by the program (named volume for persisting data)
-      - ./sql:/docker-entrypoint-initdb.d
+      - ./sql:/sql
     #bind mount for persisting data
     healthcheck: # define a check after the container is up running
       #one test all togheter

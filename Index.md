@@ -103,19 +103,25 @@
 
 <img src = "Data_Models/physical_model_1.png">
 
-## 6. 3NF
+## 6. Normalisering
 
 - Tabellerna innehåller endast atomära värden (ett värde per rad)
+- Varje kolumn har ett unikt namn
 - Primary Keys existerar
 - Attributen är kopplade och funktionellet beroende av PK
 - Attributen innehåller endast ett värde,inte flera
 - Beskrivande information är uppdelad i olika tableller
+- Icke-primära-attribut är inte beroende av andra icke-primära-attribut
 
 ### Källor:
 
 https://db.progdocs.se/normalisering
+
 https://www.databasteknik.se/webbkursen/normalisering/index.html
-https://mi.sh.se/labwiki2/index.php/Normalformer_och_normalisering
+
+https://mi.sh.se/labwiki2/index.phpNormalformer_och_normalisering
+
+https://www.geeksforgeeks.org/dbms/normal-forms-in-dbms/
 
 ## 7. Förbättringar
 
@@ -125,6 +131,12 @@ Utifrån kravspecifikationerna hade förbättringar kunnat adderas vid tillfäll
 
 - **Utbildare** - Om utbildare som är fastanställda skulle behöva ytterligare information som lön eller dylikt hade ett till Table kopplat till Utbildare behövas (fast_anställd)
 
-- **Klass** Fristående kurs är i dagsläget inte kopplad till en klass, något som kan implementeras, men som inte är nödvändig i denna version.
+- **Klass** - Fristående kurs är i dagsläget inte kopplad till en klass, något som kan implementeras, men som inte är nödvändig i denna version.
+
+- **Student** - en student kan ha ytterligare information om antagningar, uppehåll av studier, avhopp, betyg etc.
+
+- **Funktioner** - Funktioner för att kunna verifiera ex Utbildningsledare har 2 program och 3 klasser
+
+- **Triggers** - Triggers för att “köra” funktionerna när ny data läggs till
 
 # IMPLEMENTATION

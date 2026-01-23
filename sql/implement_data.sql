@@ -1,209 +1,140 @@
+-- =======================
 -- Anläggningar
--- ===============================================
+-- =======================
 INSERT INTO
     Anlaggning (anlaggning_id, namn, stad)
 VALUES
-    (1, 'Stockholm Campus', 'Stockholm'),
-    (2, 'Göteborg Campus', 'Göteborg');
+    (1, 'YrkesCo GBG', 'Göteborg'),
+    (2, 'YrkesCo STHLM', 'Stockholm');
 
 
+-- =======================
 -- Personer
--- ===============================================
+-- =======================
 INSERT INTO
-    Person (fornamn, efternamn, person_nr, email, phone_nr)
+    Person (
+        person_id,
+        fornamn,
+        efternamn,
+        person_nr,
+        email,
+        phone_nr
+    )
 VALUES
     (
-        'Alice',
-        'Andersson',
+        1,
+        'Anna',
+        'Svensson',
         '199001011234',
-        'alice.andersson@email.com',
+        'anna.svensson@gmail.com',
         '0701234567'
     ),
     (
-        'Bob',
-        'Berg',
-        '199202022345',
-        'bob.berg@email.com',
+        2,
+        'Björn',
+        'Lind',
+        '198502025678',
+        'bjorn.lind@gmail.com',
         '0702345678'
     ),
     (
-        'Carla',
-        'Carlsson',
-        '199303033456',
-        'carla.carlsson@email.com',
+        3,
+        'Caroline',
+        'Ek',
+        '199305039876',
+        'caroline.ek@gmail.com',
         '0703456789'
     ),
     (
+        4,
         'David',
-        'Dahl',
-        '199404044567',
-        'david.dahl@email.com',
+        'Johansson',
+        '198811112345',
+        'david.johansson@gmail.com',
         '0704567890'
     ),
     (
-        'Eva',
-        'Ek',
-        '199505055678',
-        'eva.ek@email.com',
+        5,
+        'Elin',
+        'Karlsson',
+        '199212123456',
+        'elin.karlsson@gmail.com',
         '0705678901'
     ),
     (
+        6,
         'Fredrik',
-        'Fors',
-        '199606066789',
-        'fredrik.fors@email.com',
+        'Andersson',
+        '198707073333',
+        'fredrik.andersson@gmail.com',
         '0706789012'
     ),
     (
-        'Gina',
-        'Gustavsson',
-        '199707077890',
-        'gina.gustavsson@email.com',
+        7,
+        'Gustav',
+        'Nilsson',
+        '199409091234',
+        'gustav.nilsson@gmail.com',
         '0707890123'
     ),
     (
+        8,
         'Hanna',
-        'Hansson',
-        '199808088901',
-        'hanna.hansson@email.com',
+        'Olsson',
+        '199601011111',
+        'hanna.olsson@gmail.com',
         '0708901234'
+    ),
+    (
+        9,
+        'Isak',
+        'Berg',
+        '199302025555',
+        'isak.berg@gmail.com',
+        '0709012345'
+    ),
+    (
+        10,
+        'Johanna',
+        'Persson',
+        '198909093333',
+        'johanna.persson@gmail.com',
+        '0700123456'
+    ),
+    (
+        11,
+        'Karin',
+        'Sund',
+        '198811112222',
+        'karin.sund@gmail.com',
+        '0701234568'
+    ),
+    (
+        12,
+        'Lars',
+        'Hansson',
+        '198606061234',
+        'lars.hansson@gmail.com',
+        '0702345679'
     );
 
 
--- Utbildningsledare
--- ===============================================
-INSERT INTO
-    Utbildningsledare (person_id, anlaggning_id)
-VALUES
-    (1, 1),
-    -- Alice på Stockholm
-    (2, 2);
-
-
--- Program
--- ===============================================
-INSERT INTO
-    Program (program_namn, utbildningsledare_id)
-VALUES
-    ('Systemutveckling', 1),
-    ('Data Science', 2);
-
-
--- Klass
--- ===============================================
-INSERT INTO
-    Klass (start_ar, program_id)
-VALUES
-    ('2024-08-19', 1),
-    ('2024-08-19', 2);
-
-
--- Studenter
--- ===============================================
-INSERT INTO
-    Student (person_id, klass_id, anlaggning_id)
-VALUES
-    (3, 1, 1),
-    -- Carla i Systemutveckling, Stockholm
-    (4, 2, 2),
-    -- David i Data Science, Göteborg
-    (5, 1, 1);
-
-
-INSERT INTO
-    Student (person_id, klass_id, anlaggning_id)
-VALUES
-    (6, NULL, 1),
-    -- Fredrik, fristående kurs, Stockholm
-    (7, NULL, 2),
-    -- Gina, fristående kurs, Göteborg
-    (8, NULL, 1);
-
-
--- Kurser
--- ===============================================
-INSERT INTO
-    Kurs (kursnamn, kurskod, kurspoang, beskrivning)
-VALUES
-    (
-        'Databaser',
-        'DB101',
-        7.5,
-        'Introduktion till databaser och SQL'
-    ),
-    (
-        'Webbutveckling',
-        'WEB201',
-        5.0,
-        'HTML, CSS och JavaScript'
-    ),
-    (
-        'Python',
-        'PY101',
-        6.0,
-        'Grundläggande Python-programmering'
-    );
-
-
--- Fristående kurser
--- ===============================================
-INSERT INTO
-    Fristaende_kurs (kursnamn, kurskod, kurspoang, beskrivning)
-VALUES
-    (
-        'AI och Maskininlärning',
-        'AI501',
-        7.5,
-        'Introduktion till AI och maskininlärning'
-    ),
-    (
-        'Cybersäkerhet',
-        'CS301',
-        5.0,
-        'Grundläggande cybersäkerhet och nätverk'
-    );
-
-
--- Student ↔ Kurs
--- ===============================================
-INSERT INTO
-    Student_kurs (student_id, kurs_id)
-VALUES
-    (1, 1),
-    -- Carla tar Databaser
-    (1, 2),
-    -- Carla tar Webbutveckling
-    (2, 3),
-    -- David tar Python
-    (3, 1),
-    -- Eva tar Databaser
-    (3, 3);
-
-
---Student ↔ Fristående kurs
--- ===============================================
-INSERT INTO
-    Student_frist_kurs (student_id, kurs_id)
-VALUES
-    (4, 1),
-    -- Fredrik tar AI
-    (5, 2),
-    -- Gina tar Cybersäkerhet
-    (6, 1);
-
-
+-- =======================
 -- Utbildare
--- ===============================================
+-- =======================
 INSERT INTO
-    Utbildare (person_id)
+    Utbildare (utbildare_id, person_id)
 VALUES
-    (1),
-    (2),
-    (6);
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5);
 
 
+-- =======================
 -- Konsulter
--- ===============================================
+-- =======================
 INSERT INTO
     Konsult (
         utbildare_id,
@@ -216,71 +147,228 @@ INSERT INTO
     )
 VALUES
     (
-        1,
-        'TechConsult',
-        'IT-konsultfirma',
+        4,
+        'Consulting AB',
+        'IT-konsult',
         '5566778899',
         TRUE,
-        'Storgatan 1, Stockholm',
-        1200.00
+        'Storgatan 12, Stockholm',
+        850.00
     ),
     (
-        2,
-        'DataExperts',
-        'Data Science-konsulter',
-        '1122334455',
+        5,
+        'TechPro AB',
+        'Utbildning & support',
+        '5566778800',
         TRUE,
-        'Götgatan 2, Göteborg',
-        1500.00
+        'Kungsgatan 5, Göteborg',
+        900.00
     );
 
 
--- Program ↔ Kurs
--- ===============================================
+-- =======================
+-- Utbildningsledare
+-- =======================
 INSERT INTO
-    Program_kurs (program_id, kurs_id)
+    Utbildningsledare (utbildningsledare_id, person_id, anlaggning_id)
+VALUES
+    (1, 6, 1),
+    (2, 7, 2);
+
+
+-- =======================
+-- Program
+-- =======================
+INSERT INTO
+    Program (program_id, program_namn, utbildningsledare_id)
+VALUES
+    (1, 'Program A', 1),
+    (2, 'Program B', 2),
+    (3, 'Program C', 1);
+
+
+-- =======================
+-- Klasser
+-- =======================
+INSERT INTO
+    Klass (klass_id, start_ar, program_id)
+VALUES
+    (1, '2024-08-20', 1),
+    (2, '2025-08-20', 1),
+    (3, '2026-08-20', 1),
+    (4, '2024-08-20', 2),
+    (5, '2025-08-20', 2),
+    (6, '2026-08-20', 2),
+    (7, '2024-08-20', 3),
+    (8, '2025-08-20', 3),
+    (9, '2026-08-20', 3);
+
+
+-- =======================
+-- Kurser
+-- =======================
+INSERT INTO
+    Kurs (
+        kurs_id,
+        kursnamn,
+        kurskod,
+        kurspoang,
+        beskrivning
+    )
+VALUES
+    (
+        1,
+        'Matematik',
+        'MAT101',
+        7.5,
+        'Grundkurs i matematik'
+    ),
+    (
+        2,
+        'Programmering',
+        'PROG101',
+        7.5,
+        'Introduktion till programmering'
+    ),
+    (
+        3,
+        'Databaser',
+        'DB101',
+        7.5,
+        'Grundläggande databasteknik'
+    );
+
+
+-- =======================
+-- Fristående kurser
+-- =======================
+INSERT INTO
+    Fristaende_kurs (
+        frist_kurs_id,
+        kursnamn,
+        kurskod,
+        kurspoang,
+        beskrivning
+    )
+VALUES
+    (
+        1,
+        'Kommunikation',
+        'KOM101',
+        5.0,
+        'Kommunikation på arbetsplatsen'
+    ),
+    (
+        2,
+        'Projektledning',
+        'PROJ101',
+        5.0,
+        'Introduktion till projektledning'
+    ),
+    (
+        3,
+        'Ledarskap',
+        'LED101',
+        5.0,
+        'Grundläggande ledarskap'
+    );
+
+
+-- =======================
+-- Studenter
+-- =======================
+INSERT INTO
+    Student (student_id, person_id, klass_id, anlaggning_id)
+VALUES
+    (1, 8, 1, 1),
+    (2, 9, 2, 1),
+    (3, 10, 4, 2),
+    (4, 11, 5, 2),
+    (5, 12, 7, 1),
+    (6, 6, 8, 2),
+    (7, 7, 9, 2);
+
+
+-- =======================
+-- Student - Kurser
+-- =======================
+INSERT INTO
+    Student_kurs (student_id, kurs_id)
 VALUES
     (1, 1),
     (1, 2),
-    (1, 3),
-    (2, 3);
+    (2, 1),
+    (2, 3),
+    (3, 2),
+    (3, 3),
+    (4, 1),
+    (4, 2),
+    (5, 3),
+    (6, 1),
+    (6, 3),
+    (7, 2);
 
 
--- Utbildare ↔ Kurs
--- ===============================================
+-- =======================
+-- Student - Fristående kurser
+-- =======================
+INSERT INTO
+    Student_frist_kurs (student_id, kurs_id)
+VALUES
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 1),
+    (5, 2),
+    (6, 3),
+    (7, 1);
+
+
+-- =======================
+-- Utbildare - kurser
+-- =======================
 INSERT INTO
     Utbildare_kurs (utbildare_id, kurs_id)
 VALUES
     (1, 1),
-    (1, 2),
-    (2, 3),
-    (6, 3);
+    (2, 2),
+    (3, 3),
+    (4, 1),
+    (5, 2);
 
 
--- Utbildare ↔ Fristående kurs
--- ===============================================
+-- =======================
+-- Utbildare - fristående kurser
+-- =======================
 INSERT INTO
     Utbildare_frist_kurs (utbildare_id, frist_kurs_id)
 VALUES
     (1, 1),
     (2, 2),
-    (6, 1);
+    (3, 3),
+    (4, 1),
+    (5, 2);
 
 
--- Utbildare ↔ Anläggning
--- ===============================================
+-- =======================
+-- Utbildare - anläggning
+-- =======================
 INSERT INTO
     Utbildare_anlaggning (utbildare_id, anlaggning_id)
 VALUES
     (1, 1),
-    (2, 2),
-    (6, 1);
+    (2, 1),
+    (3, 2),
+    (4, 2),
+    (5, 1);
 
 
--- Ovriga anställda
--- ===============================================
+-- =======================
+-- Övriga anställda
+-- =======================
 INSERT INTO
-    Ovriga_anstallda (person_id, roll, anlaggning_id)
+    Ovriga_anstallda (anstallning_id, person_id, roll, anlaggning_id)
 VALUES
-    (5, 'Administratör', 1),
-    (3, 'Reception', 2);
+    (1, 1, 'Admin', 1),
+    (2, 2, 'Ekonomiansvarig', 2),
+    (3, 3, 'Kommunikationsansvarig', 1);
