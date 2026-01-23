@@ -13,6 +13,7 @@ CREATE TABLE Person (
 -- Table Anlaggning
 CREATE TABLE Anlaggning (
     anlaggning_id INT PRIMARY KEY CHECK (anlaggning_id IN (1, 2)),
+    --finns endast 2 anläggningar
     namn VARCHAR(40) NOT NULL,
     stad VARCHAR(40) NOT NULL CHECK (stad IN ('Stockholm', 'Göteborg')) --finns endast anläggningarna göteborg eller stockholm 
 );
@@ -28,6 +29,7 @@ CREATE TABLE Utbildare (
 -- Table Konsult
 CREATE TABLE Konsult (
     utbildare_id INT PRIMARY KEY REFERENCES Utbildare(utbildare_id),
+    --subklass till Utbildare
     foretag VARCHAR(50) NOT NULL,
     foretagsinfo VARCHAR(100),
     organisationsnummer CHAR(10) NOT NULL,

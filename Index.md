@@ -108,7 +108,7 @@
 - Tabellerna innehåller endast atomära värden (ett värde per rad)
 - Primary Keys existerar
 - Attributen är kopplade och funktionellet beroende av PK
-- Attributen innehåller endast ett värde ,inte flera
+- Attributen innehåller endast ett värde,inte flera
 - Beskrivande information är uppdelad i olika tableller
 
 ### Källor:
