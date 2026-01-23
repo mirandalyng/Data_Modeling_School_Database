@@ -113,17 +113,7 @@
 - Beskrivande information är uppdelad i olika tableller
 - Icke-primära-attribut är inte beroende av andra icke-primära-attribut
 
-### Källor:
-
-https://db.progdocs.se/normalisering
-
-https://www.databasteknik.se/webbkursen/normalisering/index.html
-
-https://mi.sh.se/labwiki2/index.phpNormalformer_och_normalisering
-
-https://www.geeksforgeeks.org/dbms/normal-forms-in-dbms/
-
-## 7. Förbättringar
+## 7. Utvecklingsmöjligheter
 
 Utifrån kravspecifikationerna hade förbättringar kunnat adderas vid tillfälle. Exempel på förbättringsområden:
 
@@ -138,5 +128,3 @@ Utifrån kravspecifikationerna hade förbättringar kunnat adderas vid tillfäll
 - **Funktioner** - Funktioner för att kunna verifiera ex Utbildningsledare har 2 program och 3 klasser
 
 - **Triggers** - Triggers för att “köra” funktionerna när ny data läggs till
-
-# IMPLEMENTATION
